@@ -11,9 +11,7 @@
     </parent>
 
     <groupId>pl.wsb</groupId>
-    <!-- LAB 01: dopisz nazwę projektu (taką samą jak pakiet pl.wsb.<nazwaprojektu>), np. wdtb-2026-backend-kawiarnia -->
     <artifactId>wdtb-2026-backend-kino</artifactId>
-    <!-- LAB 01: wpisz numery indeksów osób z zespołu, np. 1.0.0-123456-123457-123458 (reguła R1.05) -->
     <version>1.0.0-113153-113537-113002</version>
     <name>WdTB-2026-Backend</name>
     <description>Projekt zespołowy z przedmiotu Wprowadzenie do technologii backendowych (WdTB)</description>
@@ -26,7 +24,7 @@
             Lokalnie podnosisz go sam na początku każdego laboratorium.
             W GitHub Actions tag lab-N uruchamia reguły laboratorium N.
         -->
-        <lab>1</lab>
+        <lab>2</lab>
     </properties>
 
     <dependencies>
