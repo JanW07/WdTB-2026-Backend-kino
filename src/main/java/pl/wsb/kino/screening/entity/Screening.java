@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.wsb.kino.hall.entity.Hall;
+import pl.wsb.kino.movie.entity.Movie;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -33,4 +35,12 @@ public class Screening {
 
     @Column(name = "language", length = 30)
     private String language;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "movie_id")
+    Movie movie;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hall_id")
+    Hall hall;
 }

@@ -5,6 +5,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.wsb.kino.screening.entity.Screening;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "hall")
@@ -26,4 +30,7 @@ public class Hall {
 
     @Embedded
     private SeatLayout layout;
+
+    @OneToMany(mappedBy = "hall", fetch = FetchType.LAZY)
+    private List<Screening> screenings = new ArrayList<>();
 }

@@ -27,8 +27,34 @@ insert into hall (name, hall_number, seat_rows, seats_per_row) values
     ('Sala 2',   2,  8, 10),
     ('Sala VIP', 3,  5,  6);
 
+-- ===== LAB 03 · seat =====
+insert into seat (seat_row, seat_number, seat_type, hall_id) values
+    (3, 5, 'STANDARD', 1),
+    (3, 6, 'STANDARD', 1),
+    (4, 7, 'STANDARD', 2),
+    (1, 2, 'VIP',      3);
+
 -- ===== LAB 02 · screening =====
-insert into screening (starts_at, price, status, language) values
-    ('2026-11-01 18:00:00', 28.00, 'SCHEDULED', 'PL'),
-    ('2026-11-01 20:30:00', 32.00, 'SCHEDULED', 'EN'),
-    ('2026-11-02 17:00:00', 25.00, 'SOLD_OUT',  'PL');
+insert into screening (starts_at, price, status, language, movie_id, hall_id) values
+    ('2026-11-01 18:00:00', 28.00, 'SCHEDULED', 'PL', 1, 1),
+    ('2026-11-01 20:30:00', 32.00, 'SCHEDULED', 'EN', 2, 2),
+    ('2026-11-02 17:00:00', 25.00, 'SOLD_OUT',  'PL', 3, 3);
+
+-- ===== LAB 03 · reservation =====
+insert into reservation (status, created_at, user_id, screening_id) values
+    ('CONFIRMED', current_timestamp, 5, 1),
+    ('PENDING',   current_timestamp, 6, 2),
+    ('CANCELLED', current_timestamp, 7, 3);
+
+-- ===== LAB 03 · reservation_seat =====
+insert into reservation_seat (reservation_id, seat_id) values
+    (1, 1),
+    (1, 2),
+    (2, 3),
+    (3, 4);
+
+-- ===== LAB 03 · payment =====
+insert into payment (amount, method, paid_at, reservation_id) values
+    (56.00, 'CARD', current_timestamp, 1),
+    (32.00, 'BLIK', current_timestamp, 2),
+    (25.00, 'CASH', current_timestamp, 3);
